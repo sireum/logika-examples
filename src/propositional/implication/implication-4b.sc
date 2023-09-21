@@ -8,13 +8,13 @@ import org.sireum.justification.natded.prop._
 @pure def implication4b(p: B, q: B): Unit = {
   Deduce(
     //@formatter:off
-    q  |-  (p ->: q)
+    q  ⊢  (p ->: q)
     Proof(
-      1 #> SubProof(
-        2 #> Assume(p),
-        3 #> q             by Premise
+      1  SubProof(
+        2  Assume(p),
+        3  (q)          by Premise
       ),
-      4 #> (p ->: q)       by ImplyI(1),
+      4  (p ->: q)      by ImplyI(1),
     )
     //@formatter:on
   )

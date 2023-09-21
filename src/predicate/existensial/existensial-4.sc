@@ -1,5 +1,5 @@
 // #Sireum #Logika
-
+//@Logika: --manual --background type
 import org.sireum._
 import org.sireum.justification._
 import org.sireum.justification.natded.prop._
@@ -11,19 +11,19 @@ import org.sireum.justification.natded.pred._
     (
       ∀{(x: T) => human(x) ->: mortal(x)},
       ∃{(y: T) => human(y)}
-    ) |- (
+    ) ⊢ (
       ∃{(z: T) => mortal(z)}
     )
     Proof(
-      1 #> ∀{(x: T) => human(x) ->: mortal(x)}    by Premise,
-      2 #> ∃{(y: T) => human(y)}                  by Premise,
-      3 #> Let { (a: T) => SubProof(
-        4 #> Assume(human(a)),
-        5 #> (human(a) ->: mortal(a))             by AllE[T](1),
-        6 #> mortal(a)                            by ImplyE(5, 4),
-        7 #> ∃{(z: T) => mortal(z)}               by ExistsI[T](6)
+      1  (∀{(x: T) => human(x) ->: mortal(x)})   by Premise,
+      2  (∃{(y: T) => human(y)})                 by Premise,
+      3  Let {(a: T) => SubProof(
+        4  Assume(human(a)),
+        5  (human(a) ->: mortal(a))              by AllE[T](1),
+        6  (mortal(a))                           by ImplyE(5, 4),
+        7  (∃{(z: T) => mortal(z)})              by ExistsI[T](6)
       )},
-      8 #> ∃{(z: T) => mortal(z)}                 by ExistsE[T](2, 3),
+      8 #> ∃{(z: T) => mortal(z)}                by ExistsE[T](2, 3),
     )
     //@formatter:on
   )

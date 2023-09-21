@@ -17,33 +17,33 @@ def multRec(m: Z, n: Z): Z = {
 
     Deduce(
       //@formatter:off
-      1 #> (n >= 0)                  by Premise,
-      2 #> (n != 0)                  by Premise,
-      3 #> (n - 1 >= 0)              by Algebra* (1, 2)
+      1  (n >= 0)                  by Premise,
+      2  (n != 0)                  by Premise,
+      3  (n - 1 >= 0)              by Algebra* (1, 2)
       //@formatter:on
     )
 
     r = multRec(m, n - 1)
 
-    Deduce((r == m * (n - 1))        by Premise)
+    Deduce((r == m * (n - 1))      by Premise)
 
     r = m + r
 
     Deduce(
       //@formatter:off
-      1 #> (Old(r) == m * (n - 1))   by Premise,
-      2 #> (r == m + Old(r))         by Premise,
-      3 #> (r == m + m * (n - 1))    by Subst_<(1, 2),
-      4 #> (r == m * n)              by Algebra* 3
+      1  (Old(r) == m * (n - 1))   by Premise,
+      2  (r == m + Old(r))         by Premise,
+      3  (r == m + m * (n - 1))    by Subst_<(1, 2),
+      4  (r == m * n)              by Algebra* 3
       //@formatter:on
     )
 
   } else {
     Deduce(
       //@formatter:off
-      1 #> !(n != 0)                 by Premise,
-      2 #> (r == 0)                  by Premise,
-      3 #> (r == m * n)              by Algebra* (1, 2)
+      1  (!(n != 0))               by Premise,
+      2  (r == 0)                  by Premise,
+      3  (r == m * n)              by Algebra* (1, 2)
       //@formatter:on
     )
   }

@@ -31,8 +31,8 @@ def mult(m: Z, n: Z): Z = {
 
     Deduce(
       //@formatter:off
-      1 #> (decreasesPost < decreasesPre)         by Auto,
-      2 #> ((decreasesPost <= 0) ->: !(i != n))   by Auto
+      1  (decreasesPost < decreasesPre)         by Auto,
+      2  ((decreasesPost <= 0) ->: !(i != n))   by Auto
       //@formatter:on
     )
     // or

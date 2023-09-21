@@ -12,9 +12,9 @@ val y: Z = 2
 
 Deduce(
   //@formatter:off
-  1 #> (x == 1)            by Premise,
-  2 #> (y == 2)            by Premise,
-  3 #> (x == 1 & y == 2)   by AndI(1, 2)
+  1  (x == 1)            by Premise,
+  2  (y == 2)            by Premise,
+  3  (x == 1 & y == 2)   by AndI(1, 2)
   //@formatter:on
 )
 

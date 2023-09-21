@@ -8,10 +8,10 @@ import org.sireum.justification.natded.prop._
 @pure def or1(p: B, q: B): Unit = {
   Deduce(
     //@formatter:off
-    p  |-  (p | q)
+    p  ⊢  (p | q)
     Proof(
-      1 #> p         by Premise,
-      2 #> (p | q)   by OrI1(1),
+      1  (p)       by Premise,
+      2  (p | q)   by OrI1(1),
     )
     //@formatter:on
   )

@@ -9,9 +9,9 @@ if (a < 0) {
 
   Deduce(
     //@formatter:off
-    1 #> (a < 0)                  by Premise,
-    2 #> (IntMax == 2147483647)   by Premise,
-    3 #> (a < IntMax)             by Algebra* (1, 2)
+    1  (a < 0)                  by Premise,
+    2  (IntMax == 2147483647)   by Premise,
+    3  (a < IntMax)             by Algebra* (1, 2)
     //@formatter:on
   )
 

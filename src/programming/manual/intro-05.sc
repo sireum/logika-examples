@@ -15,10 +15,10 @@ val max: Z = x
 
 Deduce(
   //@formatter:off
-  1 #> (max == x)   by Premise,
-  2 #> (x > y)      by Premise,
-  3 #> (max >= x)   by Algebra* 1,
-  4 #> (max >= y)   by Algebra* (3, 2)
+  1  (max == x)   by Premise,
+  2  (x > y)      by Premise,
+  3  (max >= x)   by Algebra* 1,
+  4  (max >= y)   by Algebra* (3, 2)
   //@formatter:on
 )
 

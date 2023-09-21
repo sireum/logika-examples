@@ -8,15 +8,15 @@ import org.sireum.justification.natded.prop._
 @pure def negation4(p: B, q: B): Unit = {
   Deduce(
     //@formatter:off
-    (!p)  |-  (p ->: q)
-      Proof(
-      1 #> (!p)            by Premise,
-      2 #> SubProof(
-        3 #> Assume(p),
-        4 #> F             by NegE(3, 1),
-        5 #> q             by BottomE(4)
+    (!p)  ⊢  (p ->: q)
+    Proof(
+      1  (!p)            by Premise,
+      2  SubProof(
+        3  Assume(p),
+        4  (F)           by NegE(3, 1),
+        5  (q)           by BottomE(4)
       ),
-      6 #> (p ->: q)       by ImplyI(2),
+      6  (p ->: q)       by ImplyI(2),
     )
     //@formatter:on
   )
