@@ -18,7 +18,7 @@ import org.sireum.justification.natded.pred._
 // axioms
 @spec def fFacts = Fact(
   f(0) == 1,
-  ∀{ (x: Z) => (x > 0) ->: (f(x) == f(x - 1) * x) }
+  ∀{ (x: Z) => (x > 0) __>: (f(x) == f(x - 1) * x) }
 )
 
 // Goal: return 1 * 2 * 3 * … * n
@@ -74,8 +74,8 @@ def factorial(n: Z): Z = {
       3  (i > 0)                                              by Premise,
       4  (i >= 0)                                             by Algebra* 3,
       5  (r == f(i - 1) * i)                                  by Algebra* (1, 2),
-      6  (∀{ (x: Z) => (x > 0) ->: (f(x) == f(x - 1) * x)})   by ClaimOf(fFacts _),
-      7  ((i > 0) ->: (f(i) == f(i - 1) * i))                 by AllE[Z](6),
+      6  (∀{ (x: Z) => (x > 0) __>: (f(x) == f(x - 1) * x)})     by ClaimOf(fFacts _),
+      7  ((i > 0) __>: (f(i) == f(i - 1) * i))                   by AllE[Z](6),
       8  (f(i) == f(i - 1) * i)                               by ImplyE(7, 3),
       9  (r == f(i))                                          by Subst_>(8, 5)
       //@formatter:on

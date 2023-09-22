@@ -8,7 +8,7 @@ def squareRec(a: ZS, i: Z): Unit = {
     Modifies(a),
     Ensures(
       ∀(i until a.size)(j => a(j) == In(a)(j) * In(a)(j)),
-      ∀(0 until i)(j => (j < a.size) -->: (a(j) == In(a)(j))),
+      ∀(0 until i)(j => (j < a.size) ___>: (a(j) == In(a)(j))),
       a.size == In(a).size
     )
   )

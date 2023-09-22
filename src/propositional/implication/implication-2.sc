@@ -8,9 +8,9 @@ import org.sireum.justification.natded.prop._
 @pure def implication1(p: B, q: B, r: B): Unit = {
   Deduce(
     //@formatter:off
-    ((p | q) ->: r,  q)  ⊢  r
+    (p | q __>: r,  q)  ⊢  r
     Proof(
-      1  ((p | q) ->: r)   by Premise,
+      1  (p | q __>: r)       by Premise,
       2  (q)               by Premise,
       3  (p | q)           by OrI2(2),
       4  (r)               by ImplyE(1, 3),

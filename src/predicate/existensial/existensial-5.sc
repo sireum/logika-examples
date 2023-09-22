@@ -10,13 +10,13 @@ import org.sireum.justification.natded.pred._
     //@formatter:off
     (
       ∃{(s: Z) => covered(s) & ∃{(c: C) => vowel(c) & holds(s, c)}},
-      ∃{(x: Z) => covered(x)} ->: !gameOver
+      ∃{(x: Z) => covered(x)} __>: !gameOver
     ) ⊢ (
       !gameOver
     )
     Proof(
       1  (∃{(s: Z) => covered(s) & ∃{(c: C) => vowel(c) & holds(s, c)}})   by Premise,
-      2  (∃{(x: Z) => covered(x)} ->: !gameOver)                           by Premise,
+      2  (∃{(x: Z) => covered(x)} __>: !gameOver)                             by Premise,
       3  Let {(a: Z) => SubProof(
         4  Assume(covered(a) & ∃{(c: C) => vowel(c) & holds(a, c)}),
         5  (covered(a))                                                    by AndE1(4),

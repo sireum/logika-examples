@@ -8,9 +8,9 @@ import org.sireum.justification.natded.prop._
 @pure def negation1(p: B, q: B): Unit = {
   Deduce(
     //@formatter:off
-    (p ->: !q)  ⊢  (!(p & q))
+    (p __>: !q)  ⊢  (!(p & q))
     Proof(
-      1  (p ->: !q)         by Premise,
+      1  (p __>: !q)           by Premise,
       2  SubProof(
         3  Assume(p & q),
         4  (p)              by AndE1(3),

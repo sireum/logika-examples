@@ -8,7 +8,7 @@ import org.sireum.justification.natded.prop._
 @pure def introNatDed(p: B, q: B, r: B): Unit = {
   Deduce(
     //@formatter:off
-    (p | q, r)  ⊢  (p & r | q & r)
+    (p | q,  r)  ⊢  (p & r | q & r)
     Proof(
       1  (p | q)             by Premise,
       2  (r)                 by Premise,

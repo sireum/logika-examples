@@ -9,15 +9,15 @@ import org.sireum.justification.natded.pred._
   Deduce(
     //@formatter:off
     (
-      ∀{(x: T) => human(x) ->: mortal(x)},
+      ∀{(x: T) => human(x) __>: mortal(x)},
       human(Socrates)
     ) ⊢ (
       mortal(Socrates)
     )
     Proof(
-      1  (∀{(x: T) => human(x) ->: mortal(x)})    by Premise,
+      1  (∀{(x: T) => human(x) __>: mortal(x)})      by Premise,
       2  (human(Socrates))                        by Premise,
-      3  (human(Socrates) ->: mortal(Socrates))   by AllE[T](1),
+      3  (human(Socrates) __>: mortal(Socrates))     by AllE[T](1),
       4  (mortal(Socrates))                       by ImplyE(3, 2)
     )
     //@formatter:on

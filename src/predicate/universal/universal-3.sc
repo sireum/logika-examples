@@ -9,25 +9,25 @@ import org.sireum.justification.natded.pred._
   Deduce(
     //@formatter:off
     (
-      ∀{(x: T) => human(x) ->: mortal(x)},
-      ∀{(y: T) => mortal(y) ->: soul(y)}
+      ∀{(x: T) => human(x) __>: mortal(x)},
+      ∀{(y: T) => mortal(y) __>: soul(y)}
     ) ⊢ (
-      ∀{(x: T) => human(x) ->: soul(x)}
+      ∀{(x: T) => human(x) __>: soul(x)}
     )
     Proof(
-      1  (∀{(x: T) => human(x) ->: mortal(x)})   by Premise,
-      2  (∀{(y: T) => mortal(y) ->: soul(y)})    by Premise,
+      1  (∀{(x: T) => human(x) __>: mortal(x)})     by Premise,
+      2  (∀{(y: T) => mortal(y) __>: soul(y)})      by Premise,
       3  Let {(a: T) => SubProof(
         4  SubProof(
           5  Assume(human(a)),
-          6  (human(a) ->: mortal(a))            by AllE[T](1),
+          6  (human(a) __>: mortal(a))              by AllE[T](1),
           7  (mortal(a))                         by ImplyE(6, 5),
-          8  (mortal(a) ->: soul(a))             by AllE[T](2),
+          8  (mortal(a) __>: soul(a))               by AllE[T](2),
           9  (soul(a))                           by ImplyE(8, 7)
         ),
-       10  (human(a) ->: soul(a))                by ImplyI(4)
+       10  (human(a) __>: soul(a))                  by ImplyI(4)
       )},
-      11  (∀{(x: T) => human(x) ->: soul(x)})    by AllI[T](3)
+      11  (∀{(x: T) => human(x) __>: soul(x)})      by AllI[T](3)
     )
     //@formatter:on
   )

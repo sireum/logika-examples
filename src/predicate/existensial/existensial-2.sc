@@ -9,7 +9,7 @@ import org.sireum.justification.natded.pred._
 @pure def existential2(vowel: C => B @pure, square: (Z, Z) => C @pure, holds: (C, C) => B @pure, e: C): Unit = {
   Deduce(
     //@formatter:off
-    (vowel(e), holds(square(1, 4), e))  ⊢  ∃{(y: C) => vowel(y) & ∃{(x: C) => holds(x, y)}}
+    (vowel(e),  holds(square(1, 4), e))  ⊢  ∃{(y: C) => vowel(y) & ∃{(x: C) => holds(x, y)}}
     Proof(
       1  (vowel(e))                                           by Premise,
       2  (holds(square(1, 4), e))                             by Premise,
