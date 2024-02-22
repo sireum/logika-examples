@@ -13,7 +13,7 @@ import org.sireum.justification.natded.pred._
       1  (∀{(x: T) => healthy(x) __>: happy(x)})                  by Premise,
       2  SubProof(
         3  Assume(∀{(y: T) => healthy(y)}),
-        4  Let {(a: T) => SubProof(
+        4  SubProof {(a: T) => (
           5  (healthy(a))                                      by AllE[T](3),
           6  (healthy(a) __>: happy(a))                           by AllE[T](1),
           7  (happy(a))                                        by ImplyE(6, 5)

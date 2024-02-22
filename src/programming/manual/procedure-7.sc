@@ -27,7 +27,7 @@ def square(a: ZS): Unit = {
     3  (0 <= x)                                                                      by Algebra* 2,
     4  (0 <= a.size)                                                                 by Algebra T,
     5  (x <= a.size)                                                                 by Subst_>(2, 4),
-    6  Let {(j: Z) => SubProof(
+    6  SubProof {(j: Z) => (
         7  SubProof(
           8  Assume(0 <= j & j < x),
           9  (0 <= j)                                                                by AndE1(8),
@@ -38,7 +38,7 @@ def square(a: ZS): Unit = {
    13  ((0 <= j & j < x) ___>: (a(j) == In(a)(j) * In(a)(j)))                            by SImplyI(7)
    )},
    14  (∀(0 until x)(i => a(i) == In(a)(i) * In(a)(i)))                              by AllI[Z](6),
-   15  Let {(j: Z) => SubProof(
+   15  SubProof {(j: Z) => (
         16  SubProof(
              17  Assume(x <= j & j < a.size),
              18  (x <= j)                                                            by AndE1(17),
@@ -90,7 +90,7 @@ def square(a: ZS): Unit = {
      12  (x <= x & x < Old(a).size)                                                  by AndI(11, 4),
      13  (Old(a)(x) == In(a)(x))                                                     by SImplyE(10, 12),
      14  (a(x) == In(a)(x) * In(a)(x))                                               by Subst_<(13, 9),
-     15  Let {(j: Z) => SubProof(
+     15  SubProof {(j: Z) => (
           16  SubProof(
                17  Assume(0 <= j & j <= x),
                18  (0 <= j)                                                          by AndE1(17),
@@ -112,7 +112,7 @@ def square(a: ZS): Unit = {
           31  ((0 <= j & j <= x) ___>: (a(j) == In(a)(j) * In(a)(j)))                    by SImplyI(16)
          )},
      32  (∀(0 to x)(i => a(i) == In(a)(i) * In(a)(i)))                               by AllI[Z](15),
-     33  Let {(j: Z) => SubProof(
+     33  SubProof {(j: Z) => (
           34  SubProof(
                35  Assume(x + 1 <= j & j < a.size),
                36  (x + 1 <= j)                                                      by AndE1(35),
@@ -144,7 +144,7 @@ def square(a: ZS): Unit = {
       6  (0 <= x)                                                                    by Algebra* (1, 2),
       7  (x <= a.size)                                                               by Algebra* (1, 3),
       8  (∀(x until a.size)(i => a(i) == In(a)(i)))                                  by Subst_>(1, 5),
-      9  Let {(j: Z) => SubProof(
+      9  SubProof {(j: Z) => (
           10  SubProof(
                11  Assume(0 <= j & j < x),
                12  (0 <= j)                                                          by AndE1(11),

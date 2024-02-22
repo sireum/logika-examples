@@ -17,7 +17,7 @@ import org.sireum.justification.natded.pred._
     Proof(
       1  (∀{(x: T) => human(x) __>: mortal(x)})     by Premise,
       2  (∃{(y: T) => human(y)})                 by Premise,
-      3  Let {(a: T) => SubProof(
+      3  SubProof {(a: T) => (
         4  Assume(human(a)),
         5  (human(a) __>: mortal(a))                by AllE[T](1),
         6  (mortal(a))                           by ImplyE(5, 4),
