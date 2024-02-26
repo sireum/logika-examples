@@ -5,7 +5,7 @@ import org.sireum._
 import org.sireum.justification._
 import org.sireum.justification.natded.prop._
 
-@pure def implication4b(p: B, q: B): Unit = {
+@pure def implication4c(p: B, q: B): Unit = {
   Deduce(
     //@formatter:off
     ⊢  (p __>: q __>: p)
