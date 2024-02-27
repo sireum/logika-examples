@@ -26,8 +26,8 @@ val zs: ZS = ZS(1, 2, 3)
 
 Deduce(
   //@formatter:off
-  1  (0 <= 0 & 0 < zs.size) by Auto, // obligation for the 1st swap's requires
-  2  (0 <= 2 & 2 < zs.size) by Auto // obligation for the 2nd swap's requires
+  1  (  0 <= 0 & 0 < zs.size  ) by Auto, // obligation for the 1st swap's requires
+  2  (  0 <= 2 & 2 < zs.size  ) by Auto // obligation for the 2nd swap's requires
   //@formatter:on
 )
 

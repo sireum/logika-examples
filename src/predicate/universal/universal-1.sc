@@ -15,10 +15,10 @@ import org.sireum.justification.natded.pred._
       mortal(Socrates)
     )
     Proof(
-      1  (∀{(x: T) => human(x) __>: mortal(x)})      by Premise,
-      2  (human(Socrates))                        by Premise,
-      3  (human(Socrates) __>: mortal(Socrates))     by AllE[T](1),
-      4  (mortal(Socrates))                       by ImplyE(3, 2)
+      1  (  ∀{(x: T) => human(x) __>: mortal(x)}   ) by Premise,
+      2  (  human(Socrates)                     ) by Premise,
+      3  (  human(Socrates) __>: mortal(Socrates)  ) by AllE[T](1),
+      4  (  mortal(Socrates)                    ) by ImplyE(3, 2)
     )
     //@formatter:on
   )

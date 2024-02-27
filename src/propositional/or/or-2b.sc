@@ -10,9 +10,9 @@ import org.sireum.justification.natded.prop._
     //@formatter:off
     (p & q)  ⊢  (p | q)
     Proof(
-      1  (p & q)   by Premise,
-      2  (q)       by AndE2(1),
-      3  (p | q)   by OrI2(2),
+      1  (  p & q  ) by Premise,
+      2  (  q      ) by AndE2(1),
+      3  (  p | q  ) by OrI2(2),
     )
     //@formatter:on
   )

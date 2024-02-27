@@ -15,14 +15,14 @@ import org.sireum.justification.natded.pred._
       ∀{(x: T) => gt(inc(x), x) & gt(x, dec(x))}
     )
     Proof(
-      1  (∀{(x: T) => gt(inc(x), x)})                   by Premise,
-      2  (∀{(x: T) => gt(x, dec(x))})                   by Premise,
+      1  (  ∀{(x: T) => gt(inc(x), x)}                  ) by Premise,
+      2  (  ∀{(x: T) => gt(x, dec(x))}                  ) by Premise,
       3  SubProof {(a: T) => (
-        4  (gt(inc(a), a))                              by AllE[T](1),
-        5  (gt(a, dec(a)))                              by AllE[T](2),
-        6  (gt(inc(a), a) & gt(a, dec(a)))              by AndI(4, 5)
+        4  (  gt(inc(a), a)                             ) by AllE[T](1),
+        5  (  gt(a, dec(a))                             ) by AllE[T](2),
+        6  (  gt(inc(a), a) & gt(a, dec(a))             ) by AndI(4, 5)
       )},
-      7  (∀{(x: T) => gt(inc(x), x) & gt(x, dec(x))})   by AllI[T](3)
+      7  (  ∀{(x: T) => gt(inc(x), x) & gt(x, dec(x))}  ) by AllI[T](3)
     )
     //@formatter:on
   )

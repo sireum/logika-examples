@@ -10,12 +10,12 @@ import org.sireum.justification.natded.prop._
     //@formatter:off
     (!(!p))  ⊢  p
     Proof(
-      1  (!(!p))         by Premise,
+      1  (  !(!p)          ) by Premise,
       2  SubProof(
-        3  Assume(!p),
-        4  (F)           by NegE(3, 1)
+        3  Assume(  !p  ),
+        4  (  F            ) by NegE(3, 1)
       ),
-      5  (p)             by PbC(2),
+      5  (  p              ) by PbC(2),
     )
     //@formatter:on
   )

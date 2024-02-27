@@ -10,10 +10,10 @@ import org.sireum.justification.natded.prop._
     //@formatter:off
     (p | q __>: r,  q)  ⊢  r
     Proof(
-      1  (p | q __>: r)       by Premise,
-      2  (q)               by Premise,
-      3  (p | q)           by OrI2(2),
-      4  (r)               by ImplyE(1, 3),
+      1  (  p | q __>: r  ) by Premise,
+      2  (  q          ) by Premise,
+      3  (  p | q      ) by OrI2(2),
+      4  (  r          ) by ImplyE(1, 3),
     )
     //@formatter:on
   )

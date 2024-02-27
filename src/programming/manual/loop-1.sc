@@ -23,9 +23,9 @@ def mult(m: Z, n: Z): Z = {
   // Guarantee: prove I holds
   Deduce(
     //@formatter:off
-    1  (r == 0)                  by Premise,
-    2  (i == 0)                  by Premise,
-    3  (r == m * i)              by Algebra* (1, 2)
+    1  (  r == 0      ) by Premise,
+    2  (  i == 0      ) by Premise,
+    3  (  r == m * i  ) by Algebra* (1, 2)
     //@formatter:on
   )
 
@@ -41,9 +41,9 @@ def mult(m: Z, n: Z): Z = {
     r = r + m
     Deduce(
       //@formatter:off
-      1 (r == Old(r) + m)        by Premise, // from assignment
-      2 (Old(r) == m * i)        by Premise, // from loop invariant
-      3 (r == m * i + m)         by Subst_<(2, 1)
+      1  (  r == Old(r) + m  ) by Premise, // from assignment
+      2  (  Old(r) == m * i  ) by Premise, // from loop invariant
+      3  (  r == m * i + m   ) by Subst_<(2, 1)
       //@formatter:on
     )
 
@@ -51,9 +51,9 @@ def mult(m: Z, n: Z): Z = {
 
     Deduce(
       //@formatter:off
-      1  (i == Old(i) + 1)       by Premise,
-      2  (r == m * Old(i) + m)   by Premise,
-      3  (r == m * i)            by Algebra* (1, 2)
+      1  (  i == Old(i) + 1      ) by Premise,
+      2  (  r == m * Old(i) + m  ) by Premise,
+      3  (  r == m * i           ) by Algebra* (1, 2)
       //@formatter:on
     )
     // Guarantee: I holds
@@ -67,9 +67,9 @@ def mult(m: Z, n: Z): Z = {
   // Guarantee: Post
   Deduce(
     //@formatter:off
-    1  (!(i != n))               by Premise, // from loop condition
-    2  (r == m * i)              by Premise, // from loop invariant
-    3  (r == m * n)              by Algebra* (1, 2)
+    1  (  !(i != n)   ) by Premise, // from loop condition
+    2  (  r == m * i  ) by Premise, // from loop invariant
+    3  (  r == m * n  ) by Algebra* (1, 2)
     //@formatter:on
   )
 

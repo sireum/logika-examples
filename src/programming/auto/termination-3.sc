@@ -20,8 +20,8 @@ def multRec(m: Z, n: Z): Z = {
 
     Deduce(
       //@formatter:off
-      1  (decreasesRec < decreasesEntry)    by Auto,
-      2  (decreasesEntry > 0)               by Auto
+      1  (  decreasesRec < decreasesEntry  ) by Auto,
+      2  (  decreasesEntry > 0             ) by Auto
       //@formatter:on
     )
     // or

@@ -10,10 +10,10 @@ import org.sireum.justification.natded.pred._
     //@formatter:off
     (human(Socrates),  mortal(Socrates))  ⊢  ∃{(x: T) => human(x) & mortal(x)}
     Proof(
-      1  (human(Socrates))                      by Premise,
-      2  (mortal(Socrates))                     by Premise,
-      3  (human(Socrates) & mortal(Socrates))   by AndI(1, 2),
-      4  (∃{(x: T) => human(x) & mortal(x)})    by ExistsI[T](3)
+      1  (  human(Socrates)                     ) by Premise,
+      2  (  mortal(Socrates)                    ) by Premise,
+      3  (  human(Socrates) & mortal(Socrates)  ) by AndI(1, 2),
+      4  (  ∃{(x: T) => human(x) & mortal(x)}   ) by ExistsI[T](3)
     )
     //@formatter:on
   )

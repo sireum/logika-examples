@@ -16,11 +16,11 @@ def add1(x: Z): Z = {
 val a: Z = Z.read()
 if (a > 0 & a < 100) {
 
-  Deduce((a > 0 & a < 100) by Premise)
+  Deduce((  a > 0 & a < 100  ) by Premise)
 
   val b: Z = add1(a)
 
-  Deduce((b == a + 1) by Premise)
+  Deduce((  b == a + 1  ) by Premise)
 
   assert(b == a + 1)
 }

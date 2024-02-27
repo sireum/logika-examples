@@ -15,19 +15,19 @@ import org.sireum.justification.natded.pred._
       ∀{(x: T) => human(x) __>: soul(x)}
     )
     Proof(
-      1  (∀{(x: T) => human(x) __>: mortal(x)})     by Premise,
-      2  (∀{(y: T) => mortal(y) __>: soul(y)})      by Premise,
+      1  (  ∀{(x: T) => human(x) __>: mortal(x)}  ) by Premise,
+      2  (  ∀{(y: T) => mortal(y) __>: soul(y)}   ) by Premise,
       3  SubProof {(a: T) => (
         4  SubProof(
-          5  Assume(human(a)),
-          6  (human(a) __>: mortal(a))              by AllE[T](1),
-          7  (mortal(a))                         by ImplyE(6, 5),
-          8  (mortal(a) __>: soul(a))               by AllE[T](2),
-          9  (soul(a))                           by ImplyE(8, 7)
+          5  Assume(  human(a)  ),
+          6  (  human(a) __>: mortal(a)           ) by AllE[T](1),
+          7  (  mortal(a)                      ) by ImplyE(6, 5),
+          8  (  mortal(a) __>: soul(a)            ) by AllE[T](2),
+          9  (  soul(a)                        ) by ImplyE(8, 7)
         ),
-       10  (human(a) __>: soul(a))                  by ImplyI(4)
+       10  (  human(a) __>: soul(a)               ) by ImplyI(4)
       )},
-      11  (∀{(x: T) => human(x) __>: soul(x)})      by AllI[T](3)
+      11  (  ∀{(x: T) => human(x) __>: soul(x)}   ) by AllI[T](3)
     )
     //@formatter:on
   )

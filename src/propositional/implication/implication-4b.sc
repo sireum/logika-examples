@@ -11,10 +11,10 @@ import org.sireum.justification.natded.prop._
     q  ⊢  (p __>: q)
     Proof(
       1  SubProof(
-        2  Assume(p),
-        3  (q)          by Premise
+        2  Assume(  p  ),
+        3  (  q           ) by Premise
       ),
-      4  (p __>: q)        by ImplyI(1),
+      4  (  p __>: q         ) by ImplyI(1),
     )
     //@formatter:on
   )
