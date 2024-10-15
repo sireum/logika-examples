@@ -1,0 +1,8 @@
+{
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "[scala]": {
+        "editor.fontFamily": "'Sireum Mono Plus', Menlo, Monaco, 'Courier New', monospace"
+    }
+}

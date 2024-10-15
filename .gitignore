@@ -1,5 +1,7 @@
+/.bloop
 /.idea
 /.idea_modules
+/.metals
 out
 *.cmd.jar
 *.cmd.com
