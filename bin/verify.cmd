@@ -32,7 +32,7 @@ for (file <- Os.Path.walk(home / "src", F, F, (p: Os.Path) => p.ext == "sc" || p
   val reporter = message.Reporter.create
   println(s"Verifying $file ...")
   reporter.printMessages()
-  if (Sireum.run(ISZ("logika", "verifier", file.string), reporter) != 0) {
+  if (Sireum.runWithReporter(ISZ("logika", "verifier", file.string), reporter)._1 != 0) {
     ok = F
     failing = failing :+ file
   } else {
