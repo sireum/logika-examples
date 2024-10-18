@@ -3,6 +3,7 @@
         "**/target": true
     },
     "[scala]": {
-        "editor.fontFamily": "'Sireum Mono Plus', Menlo, Monaco, 'Courier New', monospace"
+        "editor.fontFamily": "'Sireum Mono Plus', Menlo, Monaco, 'Courier New', monospace",
+        "editor.fontLigatures": true
     }
 }
