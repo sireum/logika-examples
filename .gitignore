@@ -4,6 +4,7 @@
 /.metals
 /build.mill
 /.sireum.ver
+/.mill-version
 out
 *.cmd.jar
 *.cmd.com
