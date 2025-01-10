@@ -38,4 +38,4 @@ val example = Module(
 val prj = Project.empty + example
 
 println(project.JSON.fromProject(prj, T))
-k
+
